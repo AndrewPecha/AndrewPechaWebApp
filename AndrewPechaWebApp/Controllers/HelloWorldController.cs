@@ -23,9 +23,17 @@ namespace AndrewPechaWebApp.Controllers
         {
             string returnString = string.Empty;
 
-            for (int i = 0; i < id; i++)
+            if (id == 69)
             {
-                returnString = returnString + "Return String!\n";
+                return HttpUtility.HtmlEncode("Shutup Dylan! >:O");
+            }
+
+            else
+            {
+                for (int i = 0; i < id; i++)
+                {
+                    returnString = returnString + "Return String!\n";
+                }
             }
 
             return HttpUtility.HtmlEncode(returnString).Replace("\n", "<br />");
