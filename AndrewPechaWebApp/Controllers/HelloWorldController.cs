@@ -19,9 +19,16 @@ namespace AndrewPechaWebApp.Controllers
         // 
         // GET: /HelloWorld/Welcome/ 
 
-        public string Welcome()
+        public string Welcome(int id = 1)
         {
-            return "This is the Welcome action method...";
+            string returnString = string.Empty;
+
+            for (int i = 0; i < id; i++)
+            {
+                returnString = returnString + "Return String!\n";
+            }
+
+            return HttpUtility.HtmlEncode(returnString).Replace("\n", "<br />");
         }
     }
 }
