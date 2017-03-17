@@ -19,24 +19,12 @@ namespace AndrewPechaWebApp.Controllers
         // 
         // GET: /HelloWorld/Welcome/ 
 
-        public string Welcome(int id = 1)
+        public ActionResult Welcome(string name, int numTimes = 1)
         {
-            string returnString = string.Empty;
+            ViewBag.Message = "Hello " + name;
+            ViewBag.NumTimes = numTimes;
 
-            if (id == 69)
-            {
-                return HttpUtility.HtmlEncode("Shutup Dylan! >:O");
-            }
-
-            else
-            {
-                for (int i = 0; i < id; i++)
-                {
-                    returnString = returnString + "Return String!\n";
-                }
-            }
-
-            return HttpUtility.HtmlEncode(returnString).Replace("\n", "<br />");
+            return View();
         }
     }
 }
